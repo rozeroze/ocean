@@ -1,0 +1,130 @@
+﻿/* https://bootsnipp.com/snippets/featured/material-design-switch */
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative;
+    width: 40px;
+}
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: #333;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: #888;
+    left: 20px;
+}
+
+/* ocean */
+.metadata {
+    width: 80%;
+    margin: 20px auto;
+}
+.metadata p {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px lightgray solid;
+    text-align: right;
+}
+.metadata p:before {
+    content: attr(data-header);
+    margin-right: 25px;
+}
+.chk-count {
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 1rem;
+}
+.chk-count .chk-range {
+    display: none;
+}
+.chk-count p {
+    width: 100%;
+    border-radius: 5rem;
+    text-align: center;
+}
+.chk-count .chk-range:in-range + p {
+    background: lightblue;
+}
+.chk-count .chk-range:out-of-range + p {
+    background: mistyrose;
+}
+.chk-count .chk-range:out-of-range + p:after {
+    content: '\Anobody check';
+    white-space: pre;
+}
+.chk-count p {
+    margin: 10px 10px;
+}
+.ocean-list {
+    list-style: none;
+    width: 90%;
+    margin: 10px auto;
+    padding: 0;
+}
+.ocean-list li {
+    position: relative;
+    height: 40px;
+    border: 1px lightgray solid;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+.ocean-list li * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.ocean-list li span {
+    left: 60px;
+}
+.ocean-header {
+    background: gray;
+}
+.ocean-header label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    font-size: 26px;
+    color: #fff;
+    -webkit-text-stroke: .25px #000;
+}
+.mv-ui.mv-add {
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
