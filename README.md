@@ -8,4 +8,4 @@ https://rozeroze.github.io/ocean/
 
 * Githubのロゴの利用について、商標権とか調べる
 * WebStorageについて、適当なロゴがないか調べる
-* 用意したsvgファイル(cookieとgithub)計４つについて、無駄になるかもしれないことを嘆く
+* 自作したsvgファイル(cookieとgithub)計４つについて、無駄になるかもしれないことを嘆く
