@@ -15,18 +15,16 @@
     <script src="https://get.mavo.io/mavo.min.js"></script>
     <!-- ocean -->
     <link rel="stylesheet" href="./ocean.css">
+    <script src="./ocean.js" defer></script>
 </head>
 <body>
 
-    <div mv-app="Ocean" mv-storage="https://github.com/[owner]/[repo]/[data]" id="my-mavo">
+    <div mv-app="Ocean" mv-storage="[storage]" id="my-mavo">
 
-        <meta property="owner" content="[url('owner') or 'owner']">
-        <meta property="repo" content="[url('repo') or 'MyOcean']">
-        <meta property="data" content="[url('data') or 'data/ocean.json']">
+        <meta property="storage" content="[url('storage') or 'local']">
 
         <div class="metadata">
-            <p data-header="github-account">[owner]</p>
-            <p data-header="repository">[repo]</p>
+            <p id="meta-storage" data-header="save to ">[storage]</p>
         </div>
 
         <div class="chk-count">
@@ -45,6 +43,55 @@
             </li>
         </ul>
 
+    </div>
+
+    <!-- storage change -->
+    <button type="button" id="btn-mavo-storage" class="btn btn-primary" data-toggle="modal" data-target="#storage-modal">
+        Change Storage
+    </button>
+    <div id="storage-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="storage-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="storage-modal-label" class="modal-title">Select Storage</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2 icon-radio">
+                                <input type="radio" name="icon" id="cookie-radio" value="cookie">
+                                <label for="cookie-radio"></label>
+                            </div>
+                            <div class="col-sm-10">
+                                <label for="cookie-radio">
+                                    <p>you might be save to local-storage. the data was saved by only browser. it can't be look datas, other user, other browser, etc...</p>
+                                    <p>* the local-storage is like cookie.</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2 icon-radio">
+                                <input type="radio" name="icon" id="github-radio" value="github">
+                                <label for="github-radio"></label>
+                            </div>
+                            <div class="col-sm-10">
+                                <label for="github-radio">
+                                    <p>if you wanna save to github, you can it. it needs github-account and github-repository. does you prepare it?</p>
+                                </label>
+                                <input type="text" class="form-control" id="github-url" placeholder="https://github.com/{user}/{repository}/{data.json}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="storage-change-btn" type="button" class="btn btn-primary">Change and Redirect</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
