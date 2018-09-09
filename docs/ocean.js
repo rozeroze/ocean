@@ -6,13 +6,18 @@
             // local-storage <Web Storage>
             window.location = path + '?storage=local';
         } else if (chk == 'github') {
-            // TODO: github
+            // github
+            // TODO: query-string 内のエンコード処理 encodeURI('uri')
             var url = $('input#github-url').val();
             window.location = path + '?storage=' + url;
+        } else if (chk == 'firebase') {
+            // TODO: firebase
         } else if (chk == 'dropbox') {
             // TODO: dropbox
         } else {
             // error
+            alert('error occurred!');
+            window.location.reload();
         }
     });
 })
