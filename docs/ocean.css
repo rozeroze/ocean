@@ -178,9 +178,10 @@
 }
 
 /* footer */
-footer#ocean-footer {
+#ocean-footer {
     margin-top: auto;
     width: 100vw;
     background-color: gray;
+    text-align: center;
 }
 
